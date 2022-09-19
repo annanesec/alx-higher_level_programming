@@ -1,4 +1,4 @@
-#0x00-python-hello world
+# 0x00-python-hello world
 ## DAY_0 Learning Python 
-###is a directory for the << Python - Hello, world >> project's tasks
+### is a directory for the << Python - Hello, world >> project's tasks
 
