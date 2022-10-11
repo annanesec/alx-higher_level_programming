@@ -1,4 +1,4 @@
-<img src="https://cdn.educba.com/academy/wp-content/uploads/2020/03/PYTHON-ELSE-FLOWCHART.jpg" width=520 height=230>
+<img src="https://cdn.educba.com/academy/wp-content/uploads/2020/03/PYTHON-ELSE-FLOWCHART.jpg" width=820 height=430>
 
 # 0x01-python-if_else_loops_functions
 ## About
