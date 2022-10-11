@@ -1,4 +1,4 @@
-<img src="https://codefather.tech/wp-content/uploads/2022/02/python-hello-world-840x480.png?ezimgfmt=ng%3Awebp%2Fngcb10%2Frs%3Adevice%2Frscb10-1" width=360 height=210>
+<img src="https://codefather.tech/wp-content/uploads/2022/02/python-hello-world-840x480.png?ezimgfmt=ng%3Awebp%2Fngcb10%2Frs%3Adevice%2Frscb10-1" width=840 height=480>
 
 # 0x00-python-hello_world
 ## About
