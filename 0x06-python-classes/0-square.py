@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""module containing square class"""
+"""Defines a class Square"""
 
 
 class Square:
-    """representing a square"""
+    """An empty Square class"""
     pass

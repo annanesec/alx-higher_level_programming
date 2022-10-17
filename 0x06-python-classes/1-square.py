@@ -1,9 +1,19 @@
 #!/usr/bin/python3
-"""module containing square class"""
+"""Square class definition"""
 
 
 class Square:
-    """representing a square"""
+    """Represents a square
 
+    Attributes:
+        __size (int): size of a side of the square
+    """
     def __init__(self, size):
+        """Initializes a square
+
+        Args:
+            size (int): size of a side of the square
+
+        Returns: None
+        """
         self.__size = size
