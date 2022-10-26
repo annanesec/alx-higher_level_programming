@@ -1,40 +1,48 @@
 #!/usr/bin/python3
 """
-reads stdin line by line and computes metrics
+This is '101-stats' module.
+Functions and Classes:
+    def print_results(size, status_code)
+    def main()
 """
-import sys
 
-file_size = 0
-status_tally = {"200": 0, "301": 0, "400": 0, "401": 0,
-                "403": 0, "404": 0, "405": 0, "500": 0}
-i = 0
-try:
-    for line in sys.stdin:
-        tokens = line.split()
-        if len(tokens) >= 2:
-            a = i
-            if tokens[-2] in status_tally:
-                status_tally[tokens[-2]] += 1
-                i += 1
-            try:
-                file_size += int(tokens[-1])
-                if a == i:
-                    i += 1
-            except:
-                if a == i:
-                    continue
-        if i % 10 == 0:
-            print("File size: {:d}".format(file_size))
-            for key, value in sorted(status_tally.items()):
-                if value:
-                    print("{:s}: {:d}".format(key, value))
-    print("File size: {:d}".format(file_size))
-    for key, value in sorted(status_tally.items()):
-        if value:
-            print("{:s}: {:d}".format(key, value))
 
-except KeyboardInterrupt:
-    print("File size: {:d}".format(file_size))
-    for key, value in sorted(status_tally.items()):
-        if value:
-            print("{:s}: {:d}".format(key, value))
+from sys import stdin
+
+
+def print_results(size, status_code):
+    """ prints statistics since the beginning"""
+    print("File size: {}".format(size))
+    for k in status_code.keys():
+        if status_code[k] != 0:
+            print("{}: {}".format(k, status_code[k]))
+
+
+def main():
+    """reads stdin line by line and computes metrics"""
+    status_code = {'200': 0, '301': 0, '400': 0, '401': 0,
+                   '403': 0, '404': 0, '405': 0, '500': 0}
+
+    size = 0
+    n_lines = 0
+    try:
+        for line in stdin:
+            # get last portion of line containing status code and file size
+            # then split the two arguments
+            s = line.rstrip().split("HTTP/1.1\" ")
+            numbers = s[-1].split(" ")
+
+            status_code[numbers[0]] += 1
+            size += int(numbers[-1])
+
+            # increase number of lines read and check to print out
+            n_lines += 1
+            if n_lines >= 10:
+                print_results(size, status_code)
+                n_lines = 0
+    except KeyboardInterrupt:
+        print_results(size, status_code)
+
+
+# start the script
+main()

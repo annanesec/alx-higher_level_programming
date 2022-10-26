@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is '11-student' module.
+This is '10-student' module.
 Functions and Classes:
     class Student
 """
@@ -30,10 +30,3 @@ class Student():
                 my_dict[item] = getattr(self, item)
 
         return my_dict
-
-    def reload_from_json(self, json):
-        """
-        replaces all attributes of a Student instance
-        """
-        for k, v in json.items():
-            setattr(self, k, v)
